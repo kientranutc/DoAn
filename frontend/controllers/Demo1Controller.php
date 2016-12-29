@@ -3,6 +3,7 @@ namespace frontend\controllers;
 use yii;
 use frontend\models\Demo1;
 use common\libs\sendmail;   
+use common\libs\checkmail;
 
 class Demo1Controller extends \yii\web\Controller
 {
@@ -43,7 +44,14 @@ class Demo1Controller extends \yii\web\Controller
             </tbody>
         </table>";
     $mail=new sendmail();
-    $mail->mail("domai95kxtb@gmail.com","test",$content);
+    $mail->mail("vuminhphuc.gtvt@gmail.com","test",$content);
+
+    }
+
+    public function actionMailcheck()
+    {
+     $checkmail=new checkmail();
+     $checkmail->exitsmail("kienkienutc95@gmail.com");
 
     }
 
