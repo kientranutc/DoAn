@@ -1,7 +1,8 @@
 <?php
-
 namespace frontend\controllers;
+use yii;
 use frontend\models\Demo1;
+use common\libs\sendmail;   
 
 class Demo1Controller extends \yii\web\Controller
 {
@@ -21,6 +22,29 @@ class Demo1Controller extends \yii\web\Controller
              'data'=>$datalimit
         	]);
     
+    }
+
+    public function actionTestmail()
+    {
+     $content="        <table>
+            <thead>
+                <tr>
+                    <th>header</th>
+                    <th>header2</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>data</td>
+                      <td>data2</td>
+
+                </tr>
+            </tbody>
+        </table>";
+    $mail=new sendmail();
+    $mail->mail("domai95kxtb@gmail.com","test",$content);
+
     }
 
 }
