@@ -51,7 +51,10 @@ class Demo1Controller extends \yii\web\Controller
     public function actionMailcheck()
     {
      $checkmail=new checkmail();
-     $checkmail->exitsmail("kienkienutc95@gmail.com");
+     if(!$checkmail->exitsmail("kienkienutc95@gmail.com"))
+     {
+        echo "<script>alert('email không hợp lệ !')</script>";
+     }
 
     }
 

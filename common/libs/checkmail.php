@@ -19,12 +19,7 @@ $SMTP_Validator = new SMTP_validateEmail();
 $results = $SMTP_Validator->validate(array($email), $sender);
 
 
-if ($results[$email]) {
-$check=$email.' is '.($results[$email] ? 'valid' : 'invalid')."\n";
-echo "<script>alert('mail tồn tại')</script>";
-} else {
-echo "<script>alert('mail chưa tồn tại')</script>";
-}
+return $results[$email];
 
 }
 }
